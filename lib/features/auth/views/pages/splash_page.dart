@@ -8,8 +8,7 @@ class SplashPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    // استدعي checkSession بعد بناء الـ UI مباشرة
-    // WidgetsBinding = انتظر حتى تنتهي الـ UI من البناء ثم نفّذ
+
     WidgetsBinding.instance.addPostFrameCallback((_) {
       Get.find<AuthController>().checkSession();
     });

@@ -2,16 +2,16 @@ class UserModel {
   final String  id;
   final String  email;
   final String  role;
-  final String? fullName;  // ? = nullable مثل String? في Kotlin
+  final String? fullName;
 
   UserModel({
     required this.id,
     required this.email,
     required this.role,
-    this.fullName,         // اختياري — ممكن null
+    this.fullName,         // اختياري — ممكن null json['price'] as double
   });
 
-  // مثل: static User fromResultSet(ResultSet rs) في Java
+
   factory UserModel.fromJson(Map<String, dynamic> json) {
     return UserModel(
       id:       json['id']        as String,
@@ -21,7 +21,6 @@ class UserModel {
     );
   }
 
-  // مثل: toMap() في Java — عند الإرسال لـ Supabase
   Map<String, dynamic> toJson() => {
     'id':        id,
     'email':     email,
